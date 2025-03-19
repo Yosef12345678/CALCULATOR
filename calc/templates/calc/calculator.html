@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django Calculator</title>
+</head>
+<body>
+  <section class="calculator">
+    <h1>Django Calculator App</h1>
+    <form action="{% url 'profile' %}" method="POST">
+      {% csrf_token %}
+      <label for="number_one">First Number</label>
+      <input type="number" id="number_one" placeholder="First Number" name="number_one" required>
+
+      <label for="number_two">Second Number</label>
+      <input type="number" id="number_two" placeholder="Second Number" name="number_two" required>
+
+      <label for="operation">Operation</label>
+      <select name="operation" id="operation" required>
+        <option value="add">Addition (+)</option>
+        <option value="subtract">Subtraction (-)</option>
+        <option value="multiply">Multiplication (*)</option>
+        <option value="divide">Division (/)</option>
+      </select>
+
+      <input type="submit" value="Calculate" id="calc_btn" class="btn">
+    </form>
+
+    <!-- Display the result -->
+    {% if result %}
+      <h3>The result is: {{ result }}</h3>
+    {% endif %}
+  </section>
+</body>
+</html>
