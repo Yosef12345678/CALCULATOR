@@ -1,2 +1,2 @@
 # CALCULATOR
-mini simple calculator using django framework 
+ simple calculator using django framework 
